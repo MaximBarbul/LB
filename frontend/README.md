@@ -23,3 +23,10 @@ npm run dev
 ```bash
 npm run build
 npm run preview
+
+LB2
+демонстрационные виды ссылок проекта
+http://localhost:4173/books
+http://localhost:4173/Books/new
+http://localhost:4173/books/1
+http://localhost:4173/books/32
