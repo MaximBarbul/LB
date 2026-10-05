@@ -2,7 +2,7 @@ export type BookStatus =
     'Закончено'
     | 'Приостановлено'
     | 'Продолжается'
-    | 'Незавершенна'
+    | 'Незавершённая'
 
 export type BookGenre =
     | 'Фэнтези'
@@ -48,15 +48,54 @@ export type Book = {
     id: string
     title: string
     genres: string[]
-    subtitle: string
+    subtitle?: string
     author: string
-    coAuthors: string
+    coAuthors?: string
     language: string
-    translator: string
+    translator?: string
     date_of_publication: string
-    description: string
+    description?: string
     rating: string
-    note: string
+    note?: string
     status: BookStatus
-    tag: Booktag
+    tag?: Booktag
 }
+
+export type BookDraft =   Omit<Book, 'id'>
+
+export const bookGenres: BookGenre[] = [
+    'Фэнтези',
+    'Фантастика',
+    'Детектив',
+    'Триллер',
+    'Ужасы',
+    'Приключения',
+    'Роман',
+    'Любовный роман',
+    'Драма',
+    'Комедия',
+    'Трагедия',
+    'Исторический',
+    'Биография',
+    'Мистика',
+    'Психология',
+    'Философия',
+    'Приключенческий роман',
+    'Научная фантастика',
+    'Антиутопия',
+    'Постапокалипсис',
+    'Киберпанк',
+    'Стимпанк',
+    'Военный',
+    'Политический',
+    'Социальный',
+    'Религиозный',
+    'Мифология',
+    'Сказка',
+    'Поэзия',
+    'Документальная литература'
+]
+
+export type BookGenres = typeof bookGenres[number]
+
+

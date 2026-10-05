@@ -1,0 +1,454 @@
+css
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f1eb;
+  color: #292621;
+  transition: background 0.3s, color 0.3s;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  transition: 0.2s ease;
+}
+
+/* Основной контейнер */
+
+.app {
+  min-height: 100vh;
+  background: #f4f1eb;
+  color: #292621;
+  transition: background 0.3s, color 0.3s;
+}
+
+.app > header {
+  width: 100%;
+  padding: 24px 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border-bottom: 1px solid #ddd7ce;
+}
+
+/* Заголовок */
+
+.app-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* Кнопка темы */
+
+.app-header button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+
+  background: #292621;
+  color: white;
+
+  cursor: pointer;
+}
+
+.app-header button:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  padding: 24px 60px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #ddd7ce;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+
+  /* Расстояние между названием и навигацией */
+  gap: 70px;
+}
+
+.app-title {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.app-header nav {
+  display: flex;
+  align-items: center;
+
+  /* Расстояние между Книги и Добавить книгу */
+  gap: 45px;
+}
+
+.app-header nav a {
+  color: #292621;
+  text-decoration: none;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.app-header nav a:hover {
+  color: #76563d;
+}
+
+.app-header nav a.active {
+  color: #76563d;
+}
+
+/* Страницы */
+
+.app section,
+.app > main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.app h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+/* Ссылки */
+
+.app a {
+  color: #76563d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.app a:hover {
+  text-decoration: underline;
+}
+
+/* Список книг */
+
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Карточка книги */
+
+.book-card {
+  padding: 22px;
+  background: #ffffff;
+
+  border: 1px solid #ddd7ce;
+  border-radius: 16px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+          0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.book-card h2,
+.book-card h3 {
+  margin-top: 0;
+}
+
+.book-card p {
+  color: #6e675f;
+  line-height: 1.5;
+}
+
+/* Жанры */
+
+.book-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.book-genre {
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  background: #eee6dc;
+  color: #76563d;
+
+  font-size: 13px;
+}
+
+/* Фильтр */
+
+.filter-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 25px;
+  padding: 18px;
+
+  background: #ffffff;
+  border: 1px solid #ddd7ce;
+  border-radius: 14px;
+}
+
+.filter-panel select {
+  padding: 9px 12px;
+
+  border: 1px solid #cfc7bc;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #292621;
+}
+
+.filter-panel button {
+  padding: 9px 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #eee6dc;
+  color: #76563d;
+
+  cursor: pointer;
+}
+
+/* Кнопки */
+
+.app button {
+  border: none;
+  border-radius: 9px;
+
+  padding: 10px 16px;
+
+  cursor: pointer;
+}
+
+.app button[type="submit"] {
+  background: #76563d;
+  color: white;
+}
+
+.app button[type="submit"]:hover {
+  background: #60442f;
+}
+
+.app button[type="button"] {
+  background: #e7e1d9;
+  color: #292621;
+}
+
+.app button[type="button"]:hover {
+  background: #dcd4ca;
+}
+
+/* Формы */
+
+.app form {
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 30px;
+
+  background: #ffffff;
+  border: 1px solid #ddd7ce;
+  border-radius: 16px;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.app form input,
+.app form textarea,
+.app form select {
+  width: 100%;
+
+  padding: 11px 13px;
+
+  border: 1px solid #cfc7bc;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #292621;
+
+  outline: none;
+}
+
+.app form input:focus,
+.app form textarea:focus,
+.app form select:focus {
+  border-color: #76563d;
+}
+
+.app form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Жанры в форме */
+
+.app form fieldset {
+  margin: 10px 0;
+  padding: 15px;
+
+  border: 1px solid #d7d0c7;
+  border-radius: 10px;
+}
+
+.app form fieldset label {
+  display: block;
+  margin: 7px 0;
+
+  cursor: pointer;
+}
+
+.app form fieldset input {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* Ошибка */
+
+.app [role="alert"] {
+  padding: 12px;
+
+  border-radius: 9px;
+
+  background: #f8dede;
+  color: #a33a3a;
+}
+
+/* Тёмная тема */
+
+.app.dark {
+  background: #181716;
+  color: #eee9e2;
+}
+
+.app.dark > header {
+  background: #211f1d;
+  border-color: #38332e;
+}
+
+.app.dark .book-card,
+.app.dark form,
+.app.dark .filter-panel {
+  background: #24211f;
+  border-color: #3b3631;
+
+  box-shadow:
+          0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.app.dark .book-card p {
+  color: #b7afa6;
+}
+
+.app.dark .book-genre {
+  background: #3a3028;
+  color: #d9b895;
+}
+
+.app.dark .filter-panel select,
+.app.dark form input,
+.app.dark form textarea,
+.app.dark form select {
+  background: #1d1b19;
+  border-color: #49423b;
+  color: #eee9e2;
+}
+
+.app.dark .filter-panel button,
+.app.dark button[type="button"] {
+  background: #3a3530;
+  color: #eee9e2;
+}
+
+.app.dark a {
+  color: #d9b895;
+}
+
+.app.dark form fieldset {
+  border-color: #49423b;
+}
+
+.app.dark [role="alert"] {
+  background: #482b2b;
+  color: #ffb5b5;
+}
+
+/* Адаптивность */
+
+@media (max-width: 700px) {
+  .app > header {
+    padding: 18px 20px;
+  }
+
+  .app-header h1 {
+    font-size: 22px;
+  }
+
+  .app section {
+    padding: 25px 16px;
+  }
+
+  .book-list {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .app form {
+    padding: 20px;
+  }
+}
+
+/*.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+.app section { margin-top: 32px; }
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+nav a.active { font-weight: bold; }
+.book-list { display: grid; gap: 16px; margin-top: 24px; }
+.book-card { border: 1px solid #ccc; padding: 16px; }
+.book-card h2 { margin-top: 0; }
+.book-card { overflow-wrap: anywhere; }
+@media (min-width: 760px) {
+  .book-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}*/

@@ -1,0 +1,162 @@
+form {
+    color: #292621;
+}
+
+form label,
+form legend,
+form span,
+form p {
+    color: #292621;
+}
+
+form input,
+form textarea,
+form select {
+    color: #292621;
+    background-color: #ffffff;
+}
+
+
+/* Тёмная тема */
+
+.app.dark form {
+    color: #eee9e2;
+}
+
+.app.dark form label,
+.app.dark form legend,
+.app.dark form span,
+.app.dark form p {
+    color: #eee9e2 !important;
+}
+
+.app.dark form input,
+.app.dark form textarea,
+.app.dark form select {
+    color: #eee9e2 !important;
+    background-color: #2a2724 !important;
+    border-color: #5a524a;
+}
+
+.app.dark form input::placeholder,
+.app.dark form textarea::placeholder {
+    color: #aaa29a;
+}
+
+.app.dark form fieldset {
+    border-color: #5a524a;
+}
+
+.app.dark form fieldset legend {
+    color: #eee9e2 !important;
+}
+.rating-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.star {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #b8b1aa;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.star:hover,
+.star.active {
+    color: #d49a35;
+}
+
+.rating-clear {
+    margin-left: 10px;
+    padding: 6px 10px;
+    border: 1px solid #ccc5bc;
+    border-radius: 6px;
+    background: transparent;
+    color: #292621;
+    cursor: pointer;
+}.field-error {
+     margin: 4px 0 0;
+     color: #c62828;
+     font-size: 14px;
+     font-weight: 500;
+ }
+
+.app.dark .field-error {
+    color: #ff8a8a;
+}
+
+/* Тёмная тема */
+
+.app.dark .star {
+    color: #625c56;
+}
+
+.app.dark .star:hover,
+.app.dark .star.active {
+    color: #e0a63b;
+}
+
+.app.dark .rating-clear {
+    border-color: #5a524a;
+    background: #2a2724;
+    color: #eee9e2;
+}
+.genres-fieldset {
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #ddd7ce;
+    border-radius: 12px;
+}
+
+.genres-fieldset legend {
+    padding: 0 8px;
+    font-weight: 600;
+}
+
+.genres-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 30px;
+    margin-top: 10px;
+}
+
+.genre-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.genre-checkbox input {
+    cursor: pointer;
+}
+
+.genre-checkbox span {
+    color: #292621;
+}
+
+/* Тёмная тема */
+
+.app.dark .genres-fieldset {
+    border-color: #4a443e;
+    color: #eee9e2;
+}
+
+.app.dark .genres-fieldset legend {
+    color: #eee9e2;
+}
+
+.app.dark .genre-checkbox span {
+    color: #eee9e2;
+}

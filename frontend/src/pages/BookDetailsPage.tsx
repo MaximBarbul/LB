@@ -1,6 +1,10 @@
 import { Link, useParams } from 'react-router'
-import { books } from '../data/Books'
-export function BookDetailsPage() {
+import type { Book } from '../types/Book.ts'
+type BookDetailsPageProps =
+    {
+    books: Book[],onDelete: (id: string) => void
+    }
+export function BookDetailsPage({books,onDelete}: BookDetailsPageProps) {
     const { id } = useParams()
     const book = books.find((item) => item.id === id)
     if (!book) {
@@ -13,6 +17,9 @@ export function BookDetailsPage() {
     }
     return (
         <section>
+            <h2>
+                {book.title}
+            </h2>
             <p><strong>Автор:</strong> {book.author}</p>
             <p><strong>Соавторы:</strong> {book.coAuthors || "Нет"}</p>
             <p><strong>Жанры:</strong> {book.genres.join(", ")}</p>
@@ -25,7 +32,16 @@ export function BookDetailsPage() {
             <p><strong>Заметка:</strong> {book.note}</p>
             <p><strong>Статус:</strong> {book.status}</p>
             <p><strong>Тег:</strong> {book.tag}</p>
-            <Link to="/Books">К списку книг</Link>
+            <button type="button" onClick={() => {
+                if (window.confirm(`Удалить книгу «${book.title}»?`)) {
+                    onDelete(book.id)
+                    navigate('/books', { replace: true })
+                }
+            }}>
+                Удалить
+            </button>
+            <p><Link to="/Books">К списку книг</Link></p>
         </section>
+
     )
 }
