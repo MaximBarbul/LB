@@ -43,7 +43,7 @@ export function BookPage({ books }: BookPageProps) {
                     <option value="Закончено"> Закончено </option>
                     <option value="Приостановлено"> Приостановлено </option>
                     <option value="Продолжается"> Продолжается </option>
-                    <option value="Незавершенна"> Незавершённа </option>
+                    <option value="Незавершённая"> Незавершённая </option>
                 </select>
                 <button type="button" onClick={() => setStatus('all')} >
                     Сбросить фильтр
