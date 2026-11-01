@@ -1,5 +1,6 @@
+
 import { Link, useNavigate, useParams } from 'react-router'
-import { BookForm } from '../components/BookForm'
+import BookForm from '../components/BookForm'
 import type { Book, BookDraft } from '../types/Book'
 
 type EditBookPageProps = {
@@ -7,13 +8,15 @@ type EditBookPageProps = {
     onUpdate: (id: string, draft: BookDraft) => void
 }
 
-export function EditBookPage({ books, onUpdate }: EditBookPageProps)
-{
+export function EditBookPage({ books, onUpdate }: EditBookPageProps) {
     const { id } = useParams()
     const navigate = useNavigate()
+
+    // Находим книгу по ID из адресной строки
     const book = books.find((item) => item.id === id)
-    if (!book)
-    {
+
+    // Если книга не найдена
+    if (!book) {
         return (
             <>
                 <h1>Книга не найдена</h1>
@@ -21,32 +24,37 @@ export function EditBookPage({ books, onUpdate }: EditBookPageProps)
             </>
         )
     }
-    const initialValues: BookDraft =
-        {
-            title: book.title,
-            genres: [...book.genres],
-            subtitle: book.subtitle ?? '',
-            author: book.author,
-            coAuthors: book.coAuthors ?? '',
-            language: book.language ?? '',
-            translator: book.translator ?? '',
-            date_of_publication: book.date_of_publication ?? '',
-            description: book.description ?? '',
-            rating: book.rating ?? '',
-            note: book.note ?? '',
-            status: book.status,
-            tag: book.tag
-        }
+
+    // Подготавливаем данные книги для формы
+    const initialValues: BookDraft = {
+        title: book.title,
+        genres: [...book.genres],
+        subtitle: book.subtitle ?? '',
+        author: book.author,
+        coAuthors: book.coAuthors ?? '',
+        language: book.language ?? '',
+        translator: book.translator ?? '',
+        date_of_publication: book.date_of_publication ?? '',
+        description: book.description ?? '',
+        rating: book.rating ?? '',
+        note: book.note ?? '',
+        status: book.status,
+        tag: book.tag
+    }
+
     return (
         <>
             <h1>Редактирование книги</h1>
+
             <BookForm
                 key={book.id}
                 initialValues={initialValues}
-                onSave={(draft) => {
+
+                onSave={(draft: BookDraft) => {
                     onUpdate(book.id, draft)
                     navigate(`/books/${book.id}`)
                 }}
+
                 onCancel={() => navigate(`/books/${book.id}`)}
             />
         </>

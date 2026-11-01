@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router'
-import { BookForm } from '../components/BookForm'
+import BookForm from '../components/BookForm'
 import type { BookDraft } from '../types/Book'
 
 type NewBookPageProps = {

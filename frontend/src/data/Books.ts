@@ -1,10 +1,11 @@
+
 import type { Book } from '../types/Book'
 
 export const books: Book[] = [
     {
         id: "1",
         title: "1984",
-        genres: ["Антиутопия", "Драма", "Политический"],
+        genres: ['dystopia', 'drama', 'political'],
         subtitle: "Роман",
         author: "Джордж Оруэлл",
         language: "Русский",
@@ -20,7 +21,7 @@ export const books: Book[] = [
     {
         id: "2",
         title: "Гарри Поттер и философский камень",
-        genres: ["Фэнтези", "Приключения", "Мистика"],
+        genres: ['fantasy', 'adventure', 'mystery'],
         subtitle: "Книга первая",
         author: "Дж. К. Роулинг",
         language: "Русский",
@@ -36,7 +37,7 @@ export const books: Book[] = [
     {
         id: "3",
         title: "Преступление и наказание",
-        genres: ["Роман", "Драма", "Психология", "Философия"],
+        genres: ['drama', 'psychology', 'philosophy'],
         subtitle: "Психологический роман",
         author: "Фёдор Достоевский",
         language: "Русский",
@@ -51,7 +52,7 @@ export const books: Book[] = [
     {
         id: "4",
         title: "Шерлок Холмс: Собака Баскервилей",
-        genres: ["Детектив", "Мистика", "Триллер", "Приключения"],
+        genres: ['detective', 'mystery', 'thriller', 'adventure'],
         subtitle: "Повесть",
         author: "Артур Конан Дойл",
         language: "Русский",
@@ -66,7 +67,7 @@ export const books: Book[] = [
     {
         id: "5",
         title: "Дюна",
-        genres: ["Научная фантастика", "Приключения", "Политический", "Драма"],
+        genres: ['science-fiction', 'adventure', 'political', 'drama'],
         subtitle: "Хроники Дюны",
         author: "Фрэнк Герберт",
         language: "Русский",
@@ -82,7 +83,7 @@ export const books: Book[] = [
     {
         id: "6",
         title: "Оно",
-        genres: ["Ужасы", "Триллер", "Мистика", "Драма"],
+        genres: ['horror', 'thriller', 'mystery', 'drama'],
         subtitle: "Роман",
         author: "Стивен Кинг",
         language: "Русский",

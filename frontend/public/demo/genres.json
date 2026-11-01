@@ -1,0 +1,20 @@
+
+[
+  { "id": "fantasy", "name": "Фэнтези" },
+  { "id": "science-fiction", "name": "Фантастика" },
+  { "id": "detective", "name": "Детектив" },
+  { "id": "drama", "name": "Драма" },
+  { "id": "dystopia", "name": "Антиутопия" },
+  { "id": "adventure", "name": "Приключения" },
+  { "id": "romance", "name": "Романтика" },
+  { "id": "horror", "name": "Ужасы" },
+  { "id": "thriller", "name": "Триллер" },
+  { "id": "historical", "name": "Исторический роман" },
+  { "id": "philosophy", "name": "Философия" },
+  { "id": "political", "name": "Политическая литература" },
+  { "id": "poetry", "name": "Поэзия" },
+  { "id": "biography", "name": "Биография" },
+  { "id": "documentary", "name": "Документальная литература" },
+  { "id": "mystery","name": "Мистика" },
+  {  "id": "psychology","name": "Психология"}
+]

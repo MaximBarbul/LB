@@ -1,4 +1,6 @@
 import { Link, useParams, useNavigate } from 'react-router';
+import { useGenres } from '../hooks/useGenres'
+import { getGenreNames } from '../utils/getGenreNames'
 import type { Book } from '../types/Book.ts'
 type BookDetailsPageProps =
     {
@@ -7,6 +9,7 @@ type BookDetailsPageProps =
 
 export function BookDetailsPage({books,onDelete}: BookDetailsPageProps) {
     const { id } = useParams()
+    const { load } = useGenres()
     const navigate = useNavigate();
     const book = books.find((item) => item.id === id)
     if (!book) {
@@ -17,6 +20,10 @@ export function BookDetailsPage({books,onDelete}: BookDetailsPageProps) {
             </section>
         )
     }
+    const genreNames =
+        book && load.status === 'success'
+            ? getGenreNames(book.genres, load.data)
+            : []
     return (
         <section>
             <h2>
@@ -24,7 +31,7 @@ export function BookDetailsPage({books,onDelete}: BookDetailsPageProps) {
             </h2>
             <p><strong>Автор:</strong> {book.author}</p>
             <p><strong>Соавторы:</strong> {book.coAuthors || "Нет"}</p>
-            <p><strong>Жанры:</strong> {book.genres.join(", ")}</p>
+            <p><strong>Жанры:</strong> {genreNames.join(', ')}</p>
             <p><strong>Подзаголовок:</strong> {book.subtitle}</p>
             <p><strong>Описание:</strong> {book.description}</p>
             <p><strong>Год выпуска:</strong> {book.date_of_publication}</p>

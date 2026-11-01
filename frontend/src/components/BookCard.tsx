@@ -1,7 +1,18 @@
 import { Link } from 'react-router'
 import type { Book } from '../types/Book'
-type BookCardProps = { book: Book }
+import { useGenres } from '../hooks/useGenres'
+import { getGenreNames } from '../utils/getGenreNames'
+type BookCardProps = {
+    book: Book
+}
 export function BookCard({ book }: BookCardProps) {
+
+    const { load } = useGenres()
+    const genreNames =
+        load.status === 'success'
+            ? getGenreNames(book.genres, load.data)
+            : []
+
     return (
         <article className="book-card">
             <h2>
@@ -10,7 +21,13 @@ export function BookCard({ book }: BookCardProps) {
                 </Link>
             </h2>
             <p><strong>Автор:</strong> {book.author}</p>
-            <p><strong>Жанры:</strong> {book.genres.join(", ")}</p>
+            <p><strong>Жанры:</strong>{' '}
+                {load.status === 'loading'
+                    ? 'Загрузка жанров...'
+                    : load.status === 'error'
+                        ? 'Не удалось загрузить жанры'
+                        : genreNames.join(', ')
+                }</p>
             <p><strong>Описание:</strong> {book.description}</p>
             <p><strong>Год выпуска:</strong> {book.date_of_publication}</p>
             <p><strong>Язык:</strong> {book.language}</p>
